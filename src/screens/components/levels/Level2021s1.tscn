@@ -1,16 +1,15 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://src/screens/components/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/environment/layers/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/environment/background.png" type="Texture" id=2]
 [ext_resource path="res://src/screens/components/CustomCamera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/environment/layers/middleground.png" type="Texture" id=4]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/spritesheets/woman-idle.png" type="Texture" id=5]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/environment/layers/tileset.png" type="Texture" id=6]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/environment/props/props.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/environment/props/houses.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/environment/props.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/player/player-idle.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/environment/tiles.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/player/player-swiming.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/FX/bubbles.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=10]
-[ext_resource path="res://assets/textures/levels/GothicVania-town-files/spritesheets/woman-walk.png" type="Texture" id=11]
 [ext_resource path="res://src/screens/components/GameElement.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/screens/components/GameElementsManager.gd" type="Script" id=13]
 [ext_resource path="res://assets/textures/previews/2021s1/2021s1-NormalGames-1.png" type="Texture" id=14]
@@ -23,13 +22,14 @@
 [ext_resource path="res://assets/textures/previews/2021s1/2021s1-Compumundohipermegared-1.png" type="Texture" id=21]
 [ext_resource path="res://assets/textures/previews/2021s1/2021s1-Nullpointers-3.png" type="Texture" id=22]
 [ext_resource path="res://assets/textures/previews/2021s1/2021s1-Nullpointers-1.png" type="Texture" id=23]
+[ext_resource path="res://assets/textures/levels/underwater-diving-files/environment/midground.png" type="Texture" id=24]
 
-[sub_resource type="TileSet" id=1]
-0/name = "tileset.png 0"
+[sub_resource type="TileSet" id=17]
+0/name = "tiles.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 16, 0, 64, 80 )
+0/region = Rect2( 16, 16, 80, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -39,11 +39,11 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "tileset.png 1"
+1/name = "tiles.png 1"
 1/texture = ExtResource( 6 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 96, 0, 16, 80 )
+1/region = Rect2( 112, 16, 80, 64 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
@@ -53,11 +53,11 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "tileset.png 2"
+2/name = "tiles.png 2"
 2/texture = ExtResource( 6 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 128, 0, 32, 80 )
+2/region = Rect2( 208, 112, 80, 64 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -67,11 +67,11 @@
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "tileset.png 3"
+3/name = "tiles.png 3"
 3/texture = ExtResource( 6 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 160, 16, 32, 64 )
+3/region = Rect2( 320, 112, 80, 64 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
@@ -81,11 +81,11 @@
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
-4/name = "tileset.png 4"
+4/name = "tiles.png 4"
 4/texture = ExtResource( 6 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 208, 16, 32, 64 )
+4/region = Rect2( 208, 16, 48, 80 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
@@ -95,11 +95,11 @@
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
-5/name = "tileset.png 5"
+5/name = "tiles.png 5"
 5/texture = ExtResource( 6 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 16, 96, 16, 32 )
+5/region = Rect2( 272, 16, 48, 80 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
@@ -109,11 +109,11 @@
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
-6/name = "tileset.png 6"
+6/name = "tiles.png 6"
 6/texture = ExtResource( 6 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 48, 96, 32, 32 )
+6/region = Rect2( 320, 16, 64, 80 )
 6/tile_mode = 0
 6/occluder_offset = Vector2( 0, 0 )
 6/navigation_offset = Vector2( 0, 0 )
@@ -123,11 +123,11 @@
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
-7/name = "tileset.png 7"
+7/name = "tiles.png 7"
 7/texture = ExtResource( 6 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 112, 96, 16, 32 )
+7/region = Rect2( 400, 16, 64, 80 )
 7/tile_mode = 0
 7/occluder_offset = Vector2( 0, 0 )
 7/navigation_offset = Vector2( 0, 0 )
@@ -137,11 +137,11 @@
 7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
-8/name = "tileset.png 8"
+8/name = "tiles.png 8"
 8/texture = ExtResource( 6 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 160, 96, 16, 32 )
+8/region = Rect2( 16, 96, 176, 80 )
 8/tile_mode = 0
 8/occluder_offset = Vector2( 0, 0 )
 8/navigation_offset = Vector2( 0, 0 )
@@ -151,11 +151,11 @@
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
-9/name = "tileset.png 9"
+9/name = "tiles.png 9"
 9/texture = ExtResource( 6 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 176, 96, 16, 32 )
+9/region = Rect2( 16, 176, 112, 128 )
 9/tile_mode = 0
 9/occluder_offset = Vector2( 0, 0 )
 9/navigation_offset = Vector2( 0, 0 )
@@ -165,11 +165,11 @@
 9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
-10/name = "tileset.png 10"
+10/name = "tiles.png 10"
 10/texture = ExtResource( 6 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 192, 96, 16, 32 )
+10/region = Rect2( 144, 176, 112, 128 )
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
@@ -179,11 +179,11 @@
 10/shape_one_way_margin = 0.0
 10/shapes = [  ]
 10/z_index = 0
-11/name = "tileset.png 11"
+11/name = "tiles.png 11"
 11/texture = ExtResource( 6 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 224, 96, 16, 32 )
+11/region = Rect2( 272, 208, 64, 64 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 0, 0 )
 11/navigation_offset = Vector2( 0, 0 )
@@ -193,11 +193,11 @@
 11/shape_one_way_margin = 0.0
 11/shapes = [  ]
 11/z_index = 0
-12/name = "tileset.png 12"
+12/name = "tiles.png 12"
 12/texture = ExtResource( 6 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 16, 144, 16, 32 )
+12/region = Rect2( 352, 208, 64, 64 )
 12/tile_mode = 0
 12/occluder_offset = Vector2( 0, 0 )
 12/navigation_offset = Vector2( 0, 0 )
@@ -207,11 +207,11 @@
 12/shape_one_way_margin = 0.0
 12/shapes = [  ]
 12/z_index = 0
-13/name = "tileset.png 13"
+13/name = "tiles.png 13"
 13/texture = ExtResource( 6 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 48, 144, 48, 32 )
+13/region = Rect2( 352, 288, 64, 64 )
 13/tile_mode = 0
 13/occluder_offset = Vector2( 0, 0 )
 13/navigation_offset = Vector2( 0, 0 )
@@ -221,11 +221,11 @@
 13/shape_one_way_margin = 0.0
 13/shapes = [  ]
 13/z_index = 0
-14/name = "tileset.png 14"
+14/name = "tiles.png 14"
 14/texture = ExtResource( 6 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
-14/region = Rect2( 112, 144, 32, 32 )
+14/region = Rect2( 272, 288, 64, 64 )
 14/tile_mode = 0
 14/occluder_offset = Vector2( 0, 0 )
 14/navigation_offset = Vector2( 0, 0 )
@@ -235,11 +235,11 @@
 14/shape_one_way_margin = 0.0
 14/shapes = [  ]
 14/z_index = 0
-15/name = "tileset.png 15"
+15/name = "tiles.png 15"
 15/texture = ExtResource( 6 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 160, 144, 48, 32 )
+15/region = Rect2( 16, 320, 112, 128 )
 15/tile_mode = 0
 15/occluder_offset = Vector2( 0, 0 )
 15/navigation_offset = Vector2( 0, 0 )
@@ -249,11 +249,11 @@
 15/shape_one_way_margin = 0.0
 15/shapes = [  ]
 15/z_index = 0
-16/name = "tileset.png 16"
+16/name = "tiles.png 16"
 16/texture = ExtResource( 6 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 224, 144, 16, 32 )
+16/region = Rect2( 144, 320, 112, 128 )
 16/tile_mode = 0
 16/occluder_offset = Vector2( 0, 0 )
 16/navigation_offset = Vector2( 0, 0 )
@@ -263,11 +263,11 @@
 16/shape_one_way_margin = 0.0
 16/shapes = [  ]
 16/z_index = 0
-17/name = "tileset.png 17"
+17/name = "tiles.png 17"
 17/texture = ExtResource( 6 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 272, 80, 32, 32 )
+17/region = Rect2( 320, 384, 64, 64 )
 17/tile_mode = 0
 17/occluder_offset = Vector2( 0, 0 )
 17/navigation_offset = Vector2( 0, 0 )
@@ -277,11 +277,11 @@
 17/shape_one_way_margin = 0.0
 17/shapes = [  ]
 17/z_index = 0
-18/name = "tileset.png 18"
+18/name = "tiles.png 18"
 18/texture = ExtResource( 6 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
-18/region = Rect2( 272, 128, 32, 16 )
+18/region = Rect2( 400, 384, 64, 64 )
 18/tile_mode = 0
 18/occluder_offset = Vector2( 0, 0 )
 18/navigation_offset = Vector2( 0, 0 )
@@ -291,11 +291,11 @@
 18/shape_one_way_margin = 0.0
 18/shapes = [  ]
 18/z_index = 0
-19/name = "tileset.png 19"
+19/name = "tiles.png 19"
 19/texture = ExtResource( 6 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 272, 160, 32, 16 )
+19/region = Rect2( 320, 464, 64, 64 )
 19/tile_mode = 0
 19/occluder_offset = Vector2( 0, 0 )
 19/navigation_offset = Vector2( 0, 0 )
@@ -305,11 +305,11 @@
 19/shape_one_way_margin = 0.0
 19/shapes = [  ]
 19/z_index = 0
-20/name = "tileset.png 20"
+20/name = "tiles.png 20"
 20/texture = ExtResource( 6 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 320, 80, 16, 16 )
+20/region = Rect2( 400, 464, 64, 64 )
 20/tile_mode = 0
 20/occluder_offset = Vector2( 0, 0 )
 20/navigation_offset = Vector2( 0, 0 )
@@ -319,11 +319,11 @@
 20/shape_one_way_margin = 0.0
 20/shapes = [  ]
 20/z_index = 0
-21/name = "tileset.png 21"
+21/name = "tiles.png 21"
 21/texture = ExtResource( 6 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
-21/region = Rect2( 352, 80, 32, 32 )
+21/region = Rect2( 0, 448, 208, 112 )
 21/tile_mode = 0
 21/occluder_offset = Vector2( 0, 0 )
 21/navigation_offset = Vector2( 0, 0 )
@@ -333,11 +333,11 @@
 21/shape_one_way_margin = 0.0
 21/shapes = [  ]
 21/z_index = 0
-22/name = "tileset.png 22"
+22/name = "tiles.png 22"
 22/texture = ExtResource( 6 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
-22/region = Rect2( 320, 128, 32, 48 )
+22/region = Rect2( 80, 560, 32, 80 )
 22/tile_mode = 0
 22/occluder_offset = Vector2( 0, 0 )
 22/navigation_offset = Vector2( 0, 0 )
@@ -347,11 +347,11 @@
 22/shape_one_way_margin = 0.0
 22/shapes = [  ]
 22/z_index = 0
-23/name = "tileset.png 23"
-23/texture = ExtResource( 6 )
+23/name = "props.png 23"
+23/texture = ExtResource( 4 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
-23/region = Rect2( 400, 64, 16, 32 )
+23/region = Rect2( 48, 80, 96, 112 )
 23/tile_mode = 0
 23/occluder_offset = Vector2( 0, 0 )
 23/navigation_offset = Vector2( 0, 0 )
@@ -361,11 +361,11 @@
 23/shape_one_way_margin = 0.0
 23/shapes = [  ]
 23/z_index = 0
-24/name = "tileset.png 24"
-24/texture = ExtResource( 6 )
+24/name = "props.png 24"
+24/texture = ExtResource( 4 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
-24/region = Rect2( 432, 48, 16, 32 )
+24/region = Rect2( 16, 320, 112, 112 )
 24/tile_mode = 0
 24/occluder_offset = Vector2( 0, 0 )
 24/navigation_offset = Vector2( 0, 0 )
@@ -375,11 +375,11 @@
 24/shape_one_way_margin = 0.0
 24/shapes = [  ]
 24/z_index = 0
-25/name = "tileset.png 25"
-25/texture = ExtResource( 6 )
+25/name = "props.png 25"
+25/texture = ExtResource( 4 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
-25/region = Rect2( 464, 32, 16, 32 )
+25/region = Rect2( 176, 32, 208, 208 )
 25/tile_mode = 0
 25/occluder_offset = Vector2( 0, 0 )
 25/navigation_offset = Vector2( 0, 0 )
@@ -389,11 +389,11 @@
 25/shape_one_way_margin = 0.0
 25/shapes = [  ]
 25/z_index = 0
-26/name = "tileset.png 26"
-26/texture = ExtResource( 6 )
+26/name = "props.png 26"
+26/texture = ExtResource( 4 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
-26/region = Rect2( 496, 32, 16, 32 )
+26/region = Rect2( 176, 272, 208, 208 )
 26/tile_mode = 0
 26/occluder_offset = Vector2( 0, 0 )
 26/navigation_offset = Vector2( 0, 0 )
@@ -403,11 +403,11 @@
 26/shape_one_way_margin = 0.0
 26/shapes = [  ]
 26/z_index = 0
-27/name = "tileset.png 27"
-27/texture = ExtResource( 6 )
+27/name = "props.png 27"
+27/texture = ExtResource( 4 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
-27/region = Rect2( 528, 48, 16, 32 )
+27/region = Rect2( 432, 32, 96, 240 )
 27/tile_mode = 0
 27/occluder_offset = Vector2( 0, 0 )
 27/navigation_offset = Vector2( 0, 0 )
@@ -417,11 +417,11 @@
 27/shape_one_way_margin = 0.0
 27/shapes = [  ]
 27/z_index = 0
-28/name = "tileset.png 28"
-28/texture = ExtResource( 6 )
+28/name = "props.png 28"
+28/texture = ExtResource( 4 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
-28/region = Rect2( 560, 64, 16, 32 )
+28/region = Rect2( 592, 32, 128, 240 )
 28/tile_mode = 0
 28/occluder_offset = Vector2( 0, 0 )
 28/navigation_offset = Vector2( 0, 0 )
@@ -431,11 +431,11 @@
 28/shape_one_way_margin = 0.0
 28/shapes = [  ]
 28/z_index = 0
-29/name = "tileset.png 29"
-29/texture = ExtResource( 6 )
+29/name = "props.png 29"
+29/texture = ExtResource( 4 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
-29/region = Rect2( 400, 144, 16, 32 )
+29/region = Rect2( 736, 64, 272, 192 )
 29/tile_mode = 0
 29/occluder_offset = Vector2( 0, 0 )
 29/navigation_offset = Vector2( 0, 0 )
@@ -445,11 +445,11 @@
 29/shape_one_way_margin = 0.0
 29/shapes = [  ]
 29/z_index = 0
-30/name = "tileset.png 30"
-30/texture = ExtResource( 6 )
+30/name = "props.png 30"
+30/texture = ExtResource( 4 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
-30/region = Rect2( 432, 128, 16, 32 )
+30/region = Rect2( 432, 320, 48, 64 )
 30/tile_mode = 0
 30/occluder_offset = Vector2( 0, 0 )
 30/navigation_offset = Vector2( 0, 0 )
@@ -459,11 +459,11 @@
 30/shape_one_way_margin = 0.0
 30/shapes = [  ]
 30/z_index = 0
-31/name = "tileset.png 31"
-31/texture = ExtResource( 6 )
+31/name = "props.png 31"
+31/texture = ExtResource( 4 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
-31/region = Rect2( 464, 112, 16, 32 )
+31/region = Rect2( 512, 320, 64, 64 )
 31/tile_mode = 0
 31/occluder_offset = Vector2( 0, 0 )
 31/navigation_offset = Vector2( 0, 0 )
@@ -473,11 +473,11 @@
 31/shape_one_way_margin = 0.0
 31/shapes = [  ]
 31/z_index = 0
-32/name = "tileset.png 32"
-32/texture = ExtResource( 6 )
+32/name = "props.png 32"
+32/texture = ExtResource( 4 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
-32/region = Rect2( 496, 112, 16, 32 )
+32/region = Rect2( 608, 304, 64, 80 )
 32/tile_mode = 0
 32/occluder_offset = Vector2( 0, 0 )
 32/navigation_offset = Vector2( 0, 0 )
@@ -487,174 +487,30 @@
 32/shape_one_way_margin = 0.0
 32/shapes = [  ]
 32/z_index = 0
-33/name = "tileset.png 33"
-33/texture = ExtResource( 6 )
-33/tex_offset = Vector2( 0, 0 )
-33/modulate = Color( 1, 1, 1, 1 )
-33/region = Rect2( 528, 128, 16, 32 )
-33/tile_mode = 0
-33/occluder_offset = Vector2( 0, 0 )
-33/navigation_offset = Vector2( 0, 0 )
-33/shape_offset = Vector2( 0, 0 )
-33/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-33/shape_one_way = false
-33/shape_one_way_margin = 0.0
-33/shapes = [  ]
-33/z_index = 0
-34/name = "tileset.png 34"
-34/texture = ExtResource( 6 )
-34/tex_offset = Vector2( 0, 0 )
-34/modulate = Color( 1, 1, 1, 1 )
-34/region = Rect2( 560, 144, 16, 32 )
-34/tile_mode = 0
-34/occluder_offset = Vector2( 0, 0 )
-34/navigation_offset = Vector2( 0, 0 )
-34/shape_offset = Vector2( 0, 0 )
-34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-34/shape_one_way = false
-34/shape_one_way_margin = 0.0
-34/shapes = [  ]
-34/z_index = 0
-35/name = "houses.png 35"
-35/texture = ExtResource( 8 )
-35/tex_offset = Vector2( 0, 0 )
-35/modulate = Color( 1, 1, 1, 1 )
-35/region = Rect2( 32, 64, 160, 192 )
-35/tile_mode = 0
-35/occluder_offset = Vector2( 0, 0 )
-35/navigation_offset = Vector2( 0, 0 )
-35/shape_offset = Vector2( 0, 0 )
-35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-35/shape_one_way = false
-35/shape_one_way_margin = 0.0
-35/shapes = [  ]
-35/z_index = 0
-36/name = "houses.png 36"
-36/texture = ExtResource( 8 )
-36/tex_offset = Vector2( 0, 0 )
-36/modulate = Color( 1, 1, 1, 1 )
-36/region = Rect2( 240, 0, 208, 256 )
-36/tile_mode = 0
-36/occluder_offset = Vector2( 0, 0 )
-36/navigation_offset = Vector2( 0, 0 )
-36/shape_offset = Vector2( 0, 0 )
-36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-36/shape_one_way = false
-36/shape_one_way_margin = 0.0
-36/shapes = [  ]
-36/z_index = 0
-37/name = "houses.png 37"
-37/texture = ExtResource( 8 )
-37/tex_offset = Vector2( 0, 0 )
-37/modulate = Color( 1, 1, 1, 1 )
-37/region = Rect2( 464, 64, 224, 192 )
-37/tile_mode = 0
-37/occluder_offset = Vector2( 0, 0 )
-37/navigation_offset = Vector2( 0, 0 )
-37/shape_offset = Vector2( 0, 0 )
-37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-37/shape_one_way = false
-37/shape_one_way_margin = 0.0
-37/shapes = [  ]
-37/z_index = 0
-38/name = "props.png 38"
-38/texture = ExtResource( 7 )
-38/tex_offset = Vector2( 0, 0 )
-38/modulate = Color( 1, 1, 1, 1 )
-38/region = Rect2( 16, 0, 80, 80 )
-38/tile_mode = 0
-38/occluder_offset = Vector2( 0, 0 )
-38/navigation_offset = Vector2( 0, 0 )
-38/shape_offset = Vector2( 0, 0 )
-38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-38/shape_one_way = false
-38/shape_one_way_margin = 0.0
-38/shapes = [  ]
-38/z_index = 0
-39/name = "props.png 39"
-39/texture = ExtResource( 7 )
-39/tex_offset = Vector2( 0, 0 )
-39/modulate = Color( 1, 1, 1, 1 )
-39/region = Rect2( 16, 96, 48, 48 )
-39/tile_mode = 0
-39/occluder_offset = Vector2( 0, 0 )
-39/navigation_offset = Vector2( 0, 0 )
-39/shape_offset = Vector2( 0, 0 )
-39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-39/shape_one_way = false
-39/shape_one_way_margin = 0.0
-39/shapes = [  ]
-39/z_index = 0
-40/name = "props.png 40"
-40/texture = ExtResource( 7 )
-40/tex_offset = Vector2( 0, 0 )
-40/modulate = Color( 1, 1, 1, 1 )
-40/region = Rect2( 96, 80, 112, 80 )
-40/tile_mode = 0
-40/occluder_offset = Vector2( 0, 0 )
-40/navigation_offset = Vector2( 0, 0 )
-40/shape_offset = Vector2( 0, 0 )
-40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-40/shape_one_way = false
-40/shape_one_way_margin = 0.0
-40/shapes = [  ]
-40/z_index = 0
-41/name = "props.png 41"
-41/texture = ExtResource( 7 )
-41/tex_offset = Vector2( 0, 0 )
-41/modulate = Color( 1, 1, 1, 1 )
-41/region = Rect2( 112, 16, 48, 48 )
-41/tile_mode = 0
-41/occluder_offset = Vector2( 0, 0 )
-41/navigation_offset = Vector2( 0, 0 )
-41/shape_offset = Vector2( 0, 0 )
-41/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-41/shape_one_way = false
-41/shape_one_way_margin = 0.0
-41/shapes = [  ]
-41/z_index = 0
-42/name = "props.png 42"
-42/texture = ExtResource( 7 )
-42/tex_offset = Vector2( 0, 0 )
-42/modulate = Color( 1, 1, 1, 1 )
-42/region = Rect2( 160, 32, 48, 32 )
-42/tile_mode = 0
-42/occluder_offset = Vector2( 0, 0 )
-42/navigation_offset = Vector2( 0, 0 )
-42/shape_offset = Vector2( 0, 0 )
-42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-42/shape_one_way = false
-42/shape_one_way_margin = 0.0
-42/shapes = [  ]
-42/z_index = 0
-43/name = "props.png 43"
-43/texture = ExtResource( 7 )
-43/tex_offset = Vector2( 0, 0 )
-43/modulate = Color( 1, 1, 1, 1 )
-43/region = Rect2( 256, 96, 80, 64 )
-43/tile_mode = 0
-43/occluder_offset = Vector2( 0, 0 )
-43/navigation_offset = Vector2( 0, 0 )
-43/shape_offset = Vector2( 0, 0 )
-43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-43/shape_one_way = false
-43/shape_one_way_margin = 0.0
-43/shapes = [  ]
-43/z_index = 0
-44/name = "props.png 44"
-44/texture = ExtResource( 7 )
-44/tex_offset = Vector2( 0, 0 )
-44/modulate = Color( 1, 1, 1, 1 )
-44/region = Rect2( 216, 48, 48, 112 )
-44/tile_mode = 0
-44/occluder_offset = Vector2( 0, 0 )
-44/navigation_offset = Vector2( 0, 0 )
-44/shape_offset = Vector2( 0, 0 )
-44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-44/shape_one_way = false
-44/shape_one_way_margin = 0.0
-44/shapes = [  ]
-44/z_index = 0
+
+[sub_resource type="CanvasItemMaterial" id=21]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.220096 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=24]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 40.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 23 )
+anim_speed = 1.0
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 9 )
@@ -680,10 +536,10 @@ region = Rect2( 192, 336, 32, 16 )
 atlas = ExtResource( 9 )
 region = Rect2( 465, 353, 14, 15 )
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=18]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -692,12 +548,36 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=19]
 resource_name = "idle"
-length = 0.7
+length = 0.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
@@ -718,10 +598,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+"values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:hframes")
@@ -733,12 +613,12 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=20]
 resource_name = "walk"
-length = 0.6
+length = 0.7
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
@@ -750,7 +630,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:hframes")
@@ -762,7 +642,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 7 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:frame")
@@ -771,10 +651,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
 [node name="Level" type="Node"]
@@ -789,72 +669,107 @@ scroll_ignore_camera_zoom = true
 motion_scale = Vector2( 0.05, 0 )
 motion_mirroring = Vector2( 1280, 0 )
 
+[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
+margin_top = -360.0
+margin_right = 1284.0
+margin_bottom = 360.0
+mouse_filter = 2
+color = Color( 0.141176, 0.294118, 0.494118, 1 )
+
 [node name="Sprite" type="Sprite" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 320, -64 )
+position = Vector2( 287, -84 )
 scale = Vector2( 1.667, 1.667 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 960, -64 )
+position = Vector2( 995, -10 )
 scale = Vector2( 1.667, 1.667 )
 texture = ExtResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
-margin_top = -360.0
-margin_right = 1280.0
-margin_bottom = -301.0
-mouse_filter = 2
-color = Color( 0.521569, 0.290196, 0.384314, 1 )
+flip_h = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
-motion_scale = Vector2( 0.1, 0 )
+motion_scale = Vector2( 0.3, 0 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="Sprite" type="Sprite" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 0, 152 )
-scale = Vector2( 1.667, 1.667 )
-texture = ExtResource( 4 )
-
-[node name="Sprite2" type="Sprite" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 640, 152 )
-scale = Vector2( 1.667, 1.667 )
-texture = ExtResource( 4 )
-
-[node name="Sprite3" type="Sprite" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 1280, 152 )
-scale = Vector2( 1.667, 1.667 )
-texture = ExtResource( 4 )
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
+margin_left = -3.0
+margin_top = -360.0
+margin_right = 961.0
+margin_bottom = 180.0
+rect_scale = Vector2( 1.333, 1.333 )
+mouse_filter = 2
+texture = ExtResource( 24 )
+expand = true
+stretch_mode = 2
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
+margin_left = 1039.0
+margin_top = -454.0
+margin_right = 1216.0
+margin_bottom = -200.0
+mouse_filter = 2
+color = Color( 0.0509804, 0.101961, 0.12549, 1 )
+
+[node name="BackElements" type="TileMap" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
+scale = Vector2( 1.001, 1 )
+tile_set = SubResource( 17 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -2097123, -1610612728, 0, -1966005, -536870904, 0, -1769414, 1610612763, 0, -1703911, 6, 0, -1703878, 15, 0, -1376231, -1073741821, 0, -1376227, -1610612734, 0, -1310656, -536870911, 0, -1245109, -1073741824, 0, -1048551, 536870917, 0, -1048548, -1073741824, 0, -982976, -1610612735, 0, -917437, 1610612761, 0, -917429, 13, 0, -851900, 16, 0, -720871, 4, 0, -720868, -1073741823, 0, -655296, 14, 0, -589771, 24, 0, -458693, 30, 0, -393191, -1610612736, 0, -393188, -1610612728, 0, -262090, 21, 0, -65511, 6, 0, 196667, 1073741846, 0, 262169, 4, 0, 262172, 7, 0, 524347, 22, 0, 589848, -2147483640, 0, 589853, 536870916, 0, 655410, 28, 0, 720899, 29, 0, 852027, 1073741846, 0, 917533, 536870916, 0, 1179707, 22, 0, 1245212, -536870909, 0, 1310745, 4, 0 )
+
+[node name="Particles2D" type="Particles2D" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
+material = SubResource( 21 )
+position = Vector2( 947, -61 )
+amount = 16
+lifetime = 5.0
+process_material = SubResource( 24 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
 motion_scale = Vector2( 1, 0 )
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="HousesBack" type="TileMap" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 196594, 36, 0, 131085, 536870948, 0, 131098, 36, 0, 327660, 536870949, 0, 327672, 37, 0, 262152, 536870947, 0, 262164, 536870949, 0, 262176, 37, 0 )
+[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+margin_left = 206.0
+margin_top = -377.0
+margin_right = 603.0
+margin_bottom = -317.0
+mouse_filter = 2
+color = Color( 0.0509804, 0.101961, 0.12549, 1 )
 
-[node name="Ground" type="TileMap" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 0, 17 )
-tile_set = SubResource( 1 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 655340, 536870934, 0, 655341, 536870934, 0, 655342, 536870934, 0, 655343, 536870934, 0, 655344, 536870934, 0, 655345, 536870934, 0, 655346, 536870934, 0, 655347, 536870934, 0, 655348, 536870934, 0, 655349, 536870934, 0, 655350, 536870934, 0, 655351, 536870934, 0, 655352, 536870934, 0, 655353, 536870934, 0, 655354, 536870934, 0, 655355, 536870934, 0, 655356, 536870934, 0, 655357, 536870934, 0, 655358, 536870934, 0, 655359, 536870934, 0, 589824, 536870934, 0, 589825, 536870934, 0, 589826, 536870934, 0, 589827, 536870934, 0, 589828, 536870934, 0, 589829, 536870934, 0, 589830, 536870934, 0, 589831, 536870934, 0, 589832, 536870934, 0, 589833, 536870934, 0, 589834, 536870934, 0, 589835, 536870934, 0, 589836, 536870934, 0, 589837, 536870934, 0, 589838, 536870934, 0, 589839, 536870934, 0, 589840, 536870934, 0, 589841, 536870934, 0, 589842, 536870934, 0, 589843, 536870934, 0, 589844, 536870934, 0, 589845, 536870934, 0, 589846, 536870934, 0, 589847, 536870934, 0, 589848, 536870934, 0, 589849, 536870934, 0, 589850, 536870934, 0, 589851, 536870934, 0, 589852, 536870934, 0, 589853, 536870934, 0, 589854, 536870934, 0, 589855, 536870934, 0, 589856, 536870934, 0, 589857, 536870934, 0, 589858, 536870934, 0, 589859, 536870934, 0, 589860, 536870934, 0, 589861, 536870934, 0, 589862, 536870934, 0, 589863, 536870934, 0 )
+[node name="ColorRect2" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+margin_left = 285.0
+margin_top = -377.0
+margin_right = 505.0
+margin_bottom = -281.0
+mouse_filter = 2
+color = Color( 0.0509804, 0.101961, 0.12549, 1 )
 
-[node name="Props" type="TileMap" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 0, -15 )
-tile_set = SubResource( 1 )
+[node name="ColorRect3" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+margin_left = 908.0
+margin_top = 298.0
+margin_right = 1178.0
+margin_bottom = 394.0
+mouse_filter = 2
+color = Color( 0.0509804, 0.101961, 0.12549, 1 )
+
+[node name="Ground" type="TileMap" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+tile_set = SubResource( 17 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 917520, 536870953, 0, 917530, 44, 0, 1114089, 41, 0, 1114095, 38, 0, 1048586, 40, 0, 1048633, 41, 0, 1048639, 38, 0, 1114117, 43, 0, 1310717, 42, 0, 1310719, 42, 0, 1245261, 42, 0, 1245263, 42, 0 )
+tile_data = PoolIntArray( -1703899, 16, 0, -1507319, 14, 0, -1441779, 15, 0, -1441762, 16, 0, -1179628, 1, 0, -1179623, 0, 0, 720959, 32, 0, 786489, 24, 0, 786501, 30, 0, 852029, 536870942, 0, 852040, 31, 0, 917566, 536870920, 0, 983093, 17, 0, 983097, 2, 0, 983113, 10, 0, 1245184, 2, 0, 1245189, 3, 0, 1245194, 536870914, 0, 1245199, 10, 0, 1245237, 6, 0 )
 
-[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
-margin_top = 346.0
-margin_right = 1280.0
-margin_bottom = 360.0
-mouse_filter = 2
-color = Color( 0.0901961, 0.0588235, 0.12549, 1 )
+[node name="Particles2D" type="Particles2D" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+material = SubResource( 21 )
+position = Vector2( 310, 364 )
+amount = 16
+lifetime = 5.0
+process_material = SubResource( 24 )
+texture = ExtResource( 8 )
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="BackgroundContainer"]
 layer = 1
@@ -863,11 +778,19 @@ scroll_ignore_camera_zoom = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BackgroundContainer/ParallaxForeground"]
 motion_mirroring = Vector2( 1280, 0 )
 
-[node name="TileMap" type="TileMap" parent="BackgroundContainer/ParallaxForeground/ParallaxLayer"]
-tile_set = SubResource( 1 )
+[node name="Overlay" type="TileMap" parent="BackgroundContainer/ParallaxForeground/ParallaxLayer"]
+tile_set = SubResource( 17 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 917500, 536870956, 0, 852044, 536870956, 0, 1048561, 536870952, 0, 983105, 536870952, 0, 1179620, 536870951, 0, 1114164, 536870951, 0 )
+tile_data = PoolIntArray( 458818, 26, 0 )
+
+[node name="Particles2D" type="Particles2D" parent="BackgroundContainer/ParallaxForeground/ParallaxLayer"]
+material = SubResource( 21 )
+position = Vector2( 1159, 249 )
+amount = 16
+lifetime = 5.0
+process_material = SubResource( 24 )
+texture = ExtResource( 8 )
 
 [node name="GameElementsManager" type="Node" parent="."]
 script = ExtResource( 13 )
@@ -1026,8 +949,8 @@ stretch_mode = 6
 [node name="CustomCamera" parent="World" instance=ExtResource( 3 )]
 
 [node name="Character" parent="World" instance=ExtResource( 1 )]
-position = Vector2( -658, 296 )
-texture = ExtResource( 11 )
+position = Vector2( -665, 243 )
+texture = ExtResource( 5 )
 hframes = 6
 target_path = NodePath("../CustomCamera")
 acceleration = 1000.0
@@ -1035,9 +958,9 @@ max_speed = 300.0
 animation_path = NodePath("CharacterAnimation")
 
 [node name="CharacterAnimation" type="AnimationPlayer" parent="World/Character"]
-anims/RESET = SubResource( 14 )
-anims/idle = SubResource( 15 )
-anims/walk = SubResource( 16 )
+anims/RESET = SubResource( 18 )
+anims/idle = SubResource( 19 )
+anims/walk = SubResource( 20 )
 
 [connection signal="changed_element_focus" from="GameElementsManager" to="World/CustomCamera" method="_on_changed_element_focus"]
 [connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/PreviousButton" to="GameElementsManager" method="_previous_element"]
