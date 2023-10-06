@@ -1,0 +1,229 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://src/screens/LandingScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=3]
+[ext_resource path="res://src/screens/components/levels/Level2019.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures/icons/CPI-Materia_Videojuegos.png" type="Texture" id=5]
+[ext_resource path="res://src/screens/components/levels/Level2020.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/screens/components/levels/Level2021s1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/screens/components/levels/Level2021s2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/screens/components/levels/Level2022.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/fonts/Regular-Small-Outline.tres" type="DynamicFont" id=10]
+[ext_resource path="res://src/screens/components/levels/Level2023s1.tscn" type="PackedScene" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 786, 211, 12, 11 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 721, 17, 46, 46 )
+margin_left = 15.0
+margin_right = 15.0
+margin_top = 15.0
+margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 256, 128, 48, 48 )
+margin_left = 10.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 8.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Landing" type="Node"]
+script = ExtResource( 1 )
+levels = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ) ]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UILayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ExitButton" type="TextureButton" parent="UILayer/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -48.0
+margin_top = 9.0
+margin_right = -8.0
+margin_bottom = 49.0
+texture_normal = SubResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Sponsors" type="PanelContainer" parent="UILayer/Control"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 264.0
+margin_bottom = 89.0
+grow_vertical = 0
+custom_styles/panel = SubResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Control/Sponsors"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 239.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Projects" type="PanelContainer" parent="UILayer/Control"]
+margin_left = 10.0
+margin_top = 94.0
+margin_right = 264.0
+margin_bottom = 456.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/Control/Projects"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 244.0
+margin_bottom = 352.0
+
+[node name="YearLabel" type="Label" parent="UILayer/Control/Projects/VBoxContainer"]
+margin_right = 234.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 1, 0.682353, 0.682353, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Selección de Proyectos"
+align = 1
+
+[node name="InfoLabel" type="Label" parent="UILayer/Control/Projects/VBoxContainer"]
+margin_top = 32.0
+margin_right = 234.0
+margin_bottom = 92.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Selecciona para ver los proyectos de la cursada correspondiente"
+align = 1
+autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/Control/Projects/VBoxContainer"]
+margin_top = 96.0
+margin_right = 234.0
+margin_bottom = 342.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+
+[node name="YearsContainer" type="VBoxContainer" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 224.0
+margin_bottom = 246.0
+
+[node name="2019" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_right = 214.0
+margin_bottom = 36.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+pressed = true
+enabled_focus_mode = 0
+text = "2019"
+
+[node name="2020" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 40.0
+margin_right = 214.0
+margin_bottom = 76.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2020"
+
+[node name="2021s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 80.0
+margin_right = 214.0
+margin_bottom = 116.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2021s1"
+
+[node name="2021s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 120.0
+margin_right = 214.0
+margin_bottom = 156.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2021s2"
+
+[node name="2022" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 160.0
+margin_right = 214.0
+margin_bottom = 196.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2022"
+
+[node name="2023s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 200.0
+margin_right = 214.0
+margin_bottom = 236.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2023s1"
+
+[node name="LevelContainer" type="Node" parent="."]
+
+[node name="Level" parent="LevelContainer" instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="UILayer/Control/ExitButton" to="." method="_on_ExitButton_pressed"]

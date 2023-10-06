@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/screens/components/GameElement.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Regular-Small-Outline.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 656, 16, 48, 64 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.996078, 0.882353, 0.721569, 0.74902 )
+
+[node name="GameElement" type="Control"]
+mouse_filter = 2
+script = ExtResource( 1 )
+game_title = "lorem"
+game_team = "ipsum"
+game_members = "asdasdasd"
+game_previews = [ ExtResource( 5 ) ]
+
+[node name="FollowPivot" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="TitlePanel" type="MarginContainer" parent="."]
+margin_left = -300.0
+margin_top = -294.0
+margin_right = 299.0
+margin_bottom = -239.0
+grow_vertical = 0
+
+[node name="MainPanel" type="NinePatchRect" parent="TitlePanel"]
+margin_right = 599.0
+margin_bottom = 55.0
+texture = SubResource( 3 )
+draw_center = false
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Background" type="Panel" parent="TitlePanel/MainPanel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TitlePanel"]
+margin_right = 599.0
+margin_bottom = 55.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="GameTitleLabel" type="Label" parent="TitlePanel/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 579.0
+margin_bottom = 41.0
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "lorem"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MainPanel" type="NinePatchRect" parent="."]
+margin_left = -300.0
+margin_top = -235.0
+margin_right = 300.0
+margin_bottom = 160.0
+texture = SubResource( 3 )
+draw_center = false
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Background" type="Panel" parent="MainPanel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 18.0
+margin_right = -10.0
+margin_bottom = -40.0
+custom_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 18.0
+alignment = 1
+
+[node name="Team" type="Label" parent="MainPanel/VBoxContainer/HBoxContainer"]
+margin_left = 238.0
+margin_right = 293.0
+margin_bottom = 18.0
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Equipo: "
+align = 1
+valign = 1
+
+[node name="GameTeamLabel" type="Label" parent="MainPanel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 297.0
+margin_right = 341.0
+margin_bottom = 18.0
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "ipsum"
+align = 1
+valign = 1
+
+[node name="GameMembersLabel" type="Label" parent="MainPanel/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 28.0
+margin_right = 580.0
+margin_bottom = 46.0
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "asdasdasd"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PreviewsContainer" type="HBoxContainer" parent="MainPanel/VBoxContainer"]
+margin_top = 56.0
+margin_right = 580.0
+margin_bottom = 337.0
+size_flags_vertical = 3
+
+[node name="GamePreviewTexture" type="TextureRect" parent="MainPanel/VBoxContainer/PreviewsContainer"]
+unique_name_in_owner = true
+margin_right = 580.0
+margin_bottom = 281.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
