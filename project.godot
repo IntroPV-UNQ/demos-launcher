@@ -28,7 +28,8 @@ _global_script_class_icons={
 
 config/name="IntroPV - UNQ Launcher"
 run/main_scene="res://src/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://icon.webp"
+config/windows_native_icon="res://winicon.ico"
 
 [display]
 

@@ -6053,6 +6053,7 @@ motion_mirroring = Vector2( 1028, 0 )
 margin_top = -360.0
 margin_right = 1028.0
 margin_bottom = 360.0
+mouse_filter = 2
 color = Color( 0.0784314, 0.0784314, 0.0705882, 1 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
