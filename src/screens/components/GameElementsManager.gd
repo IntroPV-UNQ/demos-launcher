@@ -12,6 +12,7 @@ var current_i: int = 0
 
 
 func _ready() -> void:
+	$ElementsContainer.show()
 	_change_element(0)
 
 

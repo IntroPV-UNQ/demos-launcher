@@ -11,7 +11,7 @@ export (float) var offset_delta: float = 10.0
 export (bool) var character_turns: bool = true
 
 export (NodePath) var animation_path: NodePath
-onready var animation_player: AnimationPlayer = get_node(animation_path)
+onready var animation_player: AnimationPlayer = get_node(animation_path) setget _set_animation_player
 
 var velocity: float = 0.0
 
@@ -24,6 +24,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction: float = global_position.direction_to(final_target).x
 		velocity = clamp(velocity + acceleration * direction * delta, -max_speed, max_speed)
-		flip_h = direction < 0 && character_turns
+		scale.x = abs(scale.x) * (1 - 2 * int(direction < 0 && character_turns))
 		animation_player.play("walk")
 	position.x += velocity * delta
+
+
+func _set_animation_player(new_player: AnimationPlayer) -> void:
+	var old_anim: String = "RESET"
+	if animation_player != null:
+		old_anim = animation_player.current_animation
+		animation_player.stop()
+	animation_player = new_player
+	if animation_player != null:
+		animation_player.play(old_anim)
