@@ -11,15 +11,20 @@ var current_i: int = 0
 func _ready() -> void:
 	for i in years_buttons.size():
 		var button: Button = years_buttons[i]
-		button.connect("pressed", self, "_on_year_button_pressed")
+		button.connect("pressed", self, "_on_year_button_pressed", [i])
+	
+	_on_year_button_pressed(levels.size() - 1)
 
 
-func _on_year_button_pressed() -> void:
+func _on_year_button_pressed(index: int) -> void:
+	if index == current_i:
+		return
+	
 	for i in years_buttons.size():
 		var button: Button = years_buttons[i]
-		if i != current_i && button.pressed:
-			_change_current_level(i)
-			break
+		button.pressed = i == index
+	
+	_change_current_level(index)
 
 
 func _change_current_level(i: int) -> void:

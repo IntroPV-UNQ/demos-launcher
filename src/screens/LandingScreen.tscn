@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/screens/LandingScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/fonts/Regular-Small-Outline.tres" type="DynamicFont" id=10]
 [ext_resource path="res://src/screens/components/levels/Level2023s1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/screens/components/levels/Level2023s2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/screens/components/levels/Level2024s1.tscn" type="PackedScene" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -41,7 +42,7 @@ axis_stretch_vertical = 2
 
 [node name="Landing" type="Node"]
 script = ExtResource( 1 )
-levels = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ) ]
+levels = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -92,7 +93,7 @@ custom_styles/panel = SubResource( 2 )
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 244.0
-margin_bottom = 392.0
+margin_bottom = 432.0
 
 [node name="YearLabel" type="Label" parent="UILayer/Control/Projects/VBoxContainer"]
 margin_right = 234.0
@@ -116,7 +117,7 @@ autowrap = true
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/Control/Projects/VBoxContainer"]
 margin_top = 96.0
 margin_right = 234.0
-margin_bottom = 382.0
+margin_bottom = 422.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -126,7 +127,7 @@ unique_name_in_owner = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 224.0
-margin_bottom = 286.0
+margin_bottom = 326.0
 
 [node name="2019" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
 margin_right = 214.0
@@ -239,6 +240,22 @@ custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2023s2"
+
+[node name="2024s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsContainer"]
+margin_top = 280.0
+margin_right = 214.0
+margin_bottom = 316.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
+text = "2024s1"
 
 [node name="LevelContainer" type="Node" parent="."]
 
