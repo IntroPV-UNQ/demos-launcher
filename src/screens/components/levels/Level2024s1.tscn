@@ -1252,8 +1252,8 @@ game_previews = [ ExtResource( 17 ), ExtResource( 15 ) ]
 [node name="GameElement" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 1344.0
 margin_right = 1344.0
-game_route = "https://toporu.itch.io/space-survivor"
-is_local = false
+game_route = "res://games/2024s1/SpaceSurvivor/SpaceSurvivor.exe"
+game_folder = "res://games/2024s1/SpaceSurvivor"
 game_title = "Space Survivor"
 game_team = "Space Survivor"
 game_members = "Rodrigo Daniel Caceres - Juan Ignacio García"
@@ -1393,8 +1393,9 @@ anims/walk = SubResource( 39 )
 [node name="Character" parent="World" instance=ExtResource( 1 )]
 position = Vector2( -665, 274 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
-hframes = 4
+texture = ExtResource( 21 )
+hframes = 3
+vframes = 6
 target_path = NodePath("../CustomCamera")
 acceleration = 3000.0
 max_speed = 600.0
