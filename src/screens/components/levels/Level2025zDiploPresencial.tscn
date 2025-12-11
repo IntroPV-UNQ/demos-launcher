@@ -1,0 +1,445 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/screens/components/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/far-clouds.png" type="Texture" id=2]
+[ext_resource path="res://src/screens/components/CustomCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/sky.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/8 Bird 2/Idle.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/near-clouds.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/far-mountains.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/mountains.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/8 Bird 2/Walk.png" type="Texture" id=11]
+[ext_resource path="res://src/screens/components/GameElement.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/screens/components/GameElementsManager.gd" type="Script" id=13]
+[ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/trees.png" type="Texture" id=22]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 9 )
+region = Rect2( 352, 304, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 9 )
+region = Rect2( 160, 304, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 9 )
+region = Rect2( 497, 353, 14, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 9 )
+region = Rect2( 384, 336, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 9 )
+region = Rect2( 192, 336, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 465, 353, 14, 15 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[node name="Level" type="Node"]
+
+[node name="BackgroundContainer" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BackgroundContainer"]
+layer = -1
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.001, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
+margin_left = -640.0
+margin_top = -362.0
+margin_right = 640.0
+margin_bottom = 598.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
+margin_top = -149.0
+margin_right = 768.031
+margin_bottom = 93.0
+rect_scale = Vector2( 1.667, 1.667 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.15, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
+margin_top = -168.0
+margin_right = 721.0
+margin_bottom = 74.0
+rect_scale = Vector2( 1.776, 1.776 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+margin_top = -192.0
+margin_right = 640.0
+margin_bottom = 50.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer5"]
+margin_top = -201.0
+margin_right = 640.0
+margin_bottom = 41.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer6"]
+margin_top = 262.0
+margin_right = 1280.0
+margin_bottom = 459.0
+mouse_filter = 2
+color = Color( 0.14902, 0.12549, 0.239216, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer6"]
+self_modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
+margin_top = -151.0
+margin_right = 720.0
+margin_bottom = 91.0
+rect_scale = Vector2( 1.779, 1.779 )
+mouse_filter = 2
+texture = ExtResource( 22 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer7"]
+margin_top = -30.0
+margin_right = 720.0
+margin_bottom = 212.0
+rect_scale = Vector2( 1.779, 1.779 )
+mouse_filter = 2
+texture = ExtResource( 22 )
+expand = true
+stretch_mode = 2
+flip_h = true
+
+[node name="GameElementsManager" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[node name="ElementsContainer" type="HBoxContainer" parent="GameElementsManager"]
+mouse_filter = 2
+custom_constants/separation = 960
+
+[node name="GameElement" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+game_route = "https://astrades-studio.itch.io/demon-kitty-trials?secret=gkaKJRKNLjv4tdcSQBsuNIfMA"
+is_local = false
+game_title = "Demon Kitty: Trials!"
+game_team = "Demon Kitty: Trials!  "
+game_members = "Ignacio Parentella"
+
+[node name="GameElement2" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 960.0
+margin_right = 960.0
+game_route = "https://elgamer1268.itch.io/the-guardian"
+is_local = false
+game_title = "The Guardian"
+game_team = "The Guardian"
+game_members = "Cristian Milarch"
+
+[node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 1920.0
+margin_right = 1920.0
+game_route = "https://darkime.itch.io/cult-of-the-eye"
+is_local = false
+game_title = "Cult of the Eye"
+game_team = "Cult of the Eye"
+game_members = "Juan Pablo Devinzenci"
+
+[node name="GameElement4" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 2880.0
+margin_right = 2880.0
+game_route = "https://precariostudio.itch.io/morpho"
+is_local = false
+game_title = "Morpho"
+game_team = "Morpho"
+game_members = "Facundo Avgustin, Tomas Barrios"
+
+[node name="GameElement5" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 3840.0
+margin_right = 3840.0
+game_route = "https://ecuarian.itch.io/guardian-fantasma?secret=j7V70NRElqLjBRSkdvqeoSQWVZ8"
+is_local = false
+game_title = "Guardián Fantasma"
+game_team = "Guardián Fantasma"
+game_members = "Leandro Copani"
+
+[node name="GameElement6" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 4800.0
+margin_right = 4800.0
+game_route = "https://angeloftheforestdev.itch.io/angel-of-the-forest"
+is_local = false
+game_title = "Angel of the Forest"
+game_team = "Angel of the Forest"
+game_members = "Cassandra Garcia - Demian Bava - Lucia Quiroga - Matias Fucarile"
+
+[node name="ButtonsLayer" type="CanvasLayer" parent="GameElementsManager"]
+
+[node name="Buttons" type="Control" parent="GameElementsManager/ButtonsLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -234.0
+margin_top = 155.0
+margin_right = 234.0
+margin_bottom = 155.0
+mouse_filter = 2
+
+[node name="PreviousButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -263.0
+margin_top = -24.0
+margin_right = -119.0
+margin_bottom = 48.0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GameElementsManager/ButtonsLayer/Buttons/PreviousButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -27.0
+margin_top = -26.0
+margin_right = 21.0
+margin_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="PlayButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = -33.5
+margin_right = 101.0
+margin_bottom = 65.5
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameElementsManager/ButtonsLayer/Buttons/PlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Jugar"
+align = 1
+valign = 1
+
+[node name="NextButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 119.0
+margin_top = -24.0
+margin_right = 263.0
+margin_bottom = 48.0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GameElementsManager/ButtonsLayer/Buttons/NextButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -26.0
+margin_right = 27.0
+margin_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="CustomCamera" parent="World" instance=ExtResource( 3 )]
+
+[node name="Character" parent="World" instance=ExtResource( 1 )]
+position = Vector2( -658, 261 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+hframes = 4
+frame = 1
+target_path = NodePath("../CustomCamera")
+acceleration = 1000.0
+max_speed = 300.0
+animation_path = NodePath("CharacterAnimation")
+
+[node name="CharacterAnimation" type="AnimationPlayer" parent="World/Character"]
+anims/RESET = SubResource( 14 )
+anims/idle = SubResource( 15 )
+anims/walk = SubResource( 16 )
+
+[connection signal="changed_element_focus" from="GameElementsManager" to="World/CustomCamera" method="_on_changed_element_focus"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/PreviousButton" to="GameElementsManager" method="_previous_element"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/PlayButton" to="GameElementsManager" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/NextButton" to="GameElementsManager" method="_next_element"]

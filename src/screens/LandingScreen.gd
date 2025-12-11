@@ -3,6 +3,7 @@ extends Screen
 onready var level_container: Node = $LevelContainer
 onready var years_buttons: Array = $"%YearsContainer".get_children()
 
+export (int) var starting_level: int
 export (Array, PackedScene) var levels: Array
 
 var current_i: int = 0
@@ -13,7 +14,7 @@ func _ready() -> void:
 		var button: Button = years_buttons[i]
 		button.connect("pressed", self, "_on_year_button_pressed", [i])
 	
-	_on_year_button_pressed(levels.size() - 1)
+	_on_year_button_pressed(starting_level)
 
 
 func _on_year_button_pressed(index: int) -> void:

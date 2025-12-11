@@ -1,0 +1,415 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://src/screens/components/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/Layers/middle.png" type="Texture" id=2]
+[ext_resource path="res://src/screens/components/CustomCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/Layers/foreground-empty.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/4 Cat 2/Idle.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/Layers/foreground.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/4 Cat 2/Walk.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/previews/2025s1/gauchosurvivor.jpeg" type="Texture" id=8]
+[ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/textures/previews/2025s1/unqastillo.jpg" type="Texture" id=11]
+[ext_resource path="res://src/screens/components/GameElement.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/screens/components/GameElementsManager.gd" type="Script" id=13]
+[ext_resource path="res://assets/textures/previews/2025s1/lumbersnake.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/previews/2025s1/rataespacial.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/levels/cyberpunk-street-files/Layers/back.png" type="Texture" id=24]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 9 )
+region = Rect2( 352, 304, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 9 )
+region = Rect2( 160, 304, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 9 )
+region = Rect2( 497, 353, 14, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 9 )
+region = Rect2( 384, 336, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 9 )
+region = Rect2( 192, 336, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 465, 353, 14, 15 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[node name="Level" type="Node"]
+
+[node name="BackgroundContainer" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BackgroundContainer"]
+layer = -1
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.05, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer"]
+margin_top = -360.0
+margin_right = 768.0
+margin_bottom = -91.0
+rect_scale = Vector2( 1.667, 1.667 )
+mouse_filter = 2
+texture = ExtResource( 24 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer2"]
+self_modulate = Color( 4, 4, 4, 0.717647 )
+margin_top = -336.0
+margin_right = 768.0
+margin_bottom = -67.0
+rect_scale = Vector2( 1.667, 1.667 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect2" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer3"]
+self_modulate = Color( 1.5, 1.5, 1.5, 1 )
+margin_left = -128.0
+margin_top = -227.0
+margin_right = 896.0
+margin_bottom = 42.0
+rect_scale = Vector2( 1.667, 1.667 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer4"]
+margin_top = -91.0
+margin_right = 768.0
+margin_bottom = 178.0
+rect_scale = Vector2( 1.667, 1.667 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="BackgroundContainer/ParallaxBackground"]
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 2560, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer5"]
+margin_top = 346.0
+margin_right = 2560.0
+margin_bottom = 360.0
+mouse_filter = 2
+color = Color( 0.14902, 0.235294, 0.27451, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer5"]
+margin_top = -148.0
+margin_right = 688.0
+margin_bottom = 124.0
+rect_scale = Vector2( 1.867, 1.867 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="BackgroundContainer/ParallaxBackground/ParallaxLayer5"]
+margin_left = 1280.0
+margin_top = -148.0
+margin_right = 1968.0
+margin_bottom = 124.0
+rect_scale = Vector2( 1.867, 1.867 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="GameElementsManager" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[node name="ElementsContainer" type="HBoxContainer" parent="GameElementsManager"]
+mouse_filter = 2
+custom_constants/separation = 960
+
+[node name="GameElement" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+game_route = "https://franciscoperezramos.itch.io/gauchosurvivor"
+is_local = false
+game_title = "Gaucho Survivor"
+game_team = "Gaucho Survivor"
+game_members = "Francisco Perez Ramos - Aaron Gutierrez - Lucas Sandoval"
+game_previews = [ ExtResource( 8 ) ]
+
+[node name="GameElement2" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 960.0
+margin_right = 960.0
+game_route = "https://ivanros02.itch.io/unqastillo"
+is_local = false
+game_title = "UNQastillo"
+game_team = "UNQastillo"
+game_members = "Acosta Matias - Rosendo Ivan"
+game_previews = [ ExtResource( 11 ) ]
+
+[node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 1920.0
+margin_right = 1920.0
+game_route = "https://itsjoacor.itch.io/rata-espacial"
+is_local = false
+game_title = "Rata Espacial"
+game_team = "Rata Espacial"
+game_members = "Joaquin Rodriguez"
+game_previews = [ ExtResource( 15 ) ]
+
+[node name="GameElement4" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 2880.0
+margin_right = 2880.0
+game_route = "https://tomas2305.itch.io/lumbersnake"
+is_local = false
+game_title = "Lumbersnake"
+game_team = "Urutaú"
+game_members = "Tomás Acosta - Manuel Dobrotinich"
+game_previews = [ ExtResource( 14 ) ]
+
+[node name="ButtonsLayer" type="CanvasLayer" parent="GameElementsManager"]
+
+[node name="Buttons" type="Control" parent="GameElementsManager/ButtonsLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -234.0
+margin_top = 155.0
+margin_right = 234.0
+margin_bottom = 155.0
+mouse_filter = 2
+
+[node name="PreviousButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -263.0
+margin_top = -24.0
+margin_right = -119.0
+margin_bottom = 48.0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GameElementsManager/ButtonsLayer/Buttons/PreviousButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -27.0
+margin_top = -26.0
+margin_right = 21.0
+margin_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="PlayButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = -33.5
+margin_right = 101.0
+margin_bottom = 65.5
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="GameElementsManager/ButtonsLayer/Buttons/PlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_outline_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Jugar"
+align = 1
+valign = 1
+
+[node name="NextButton" type="TextureButton" parent="GameElementsManager/ButtonsLayer/Buttons"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 119.0
+margin_top = -24.0
+margin_right = 263.0
+margin_bottom = 48.0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GameElementsManager/ButtonsLayer/Buttons/NextButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -26.0
+margin_right = 27.0
+margin_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="CustomCamera" parent="World" instance=ExtResource( 3 )]
+
+[node name="Character" parent="World" instance=ExtResource( 1 )]
+position = Vector2( -658, 296 )
+scale = Vector2( 1.667, 1.667 )
+texture = ExtResource( 7 )
+hframes = 6
+target_path = NodePath("../CustomCamera")
+acceleration = 1000.0
+max_speed = 300.0
+animation_path = NodePath("CharacterAnimation")
+
+[node name="CharacterAnimation" type="AnimationPlayer" parent="World/Character"]
+anims/RESET = SubResource( 14 )
+anims/idle = SubResource( 15 )
+anims/walk = SubResource( 16 )
+
+[connection signal="changed_element_focus" from="GameElementsManager" to="World/CustomCamera" method="_on_changed_element_focus"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/PreviousButton" to="GameElementsManager" method="_previous_element"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/PlayButton" to="GameElementsManager" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="GameElementsManager/ButtonsLayer/Buttons/NextButton" to="GameElementsManager" method="_next_element"]
