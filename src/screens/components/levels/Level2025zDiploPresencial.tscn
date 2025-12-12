@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/screens/components/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/far-clouds.png" type="Texture" id=2]
@@ -13,6 +13,14 @@
 [ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/8 Bird 2/Walk.png" type="Texture" id=11]
 [ext_resource path="res://src/screens/components/GameElement.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/screens/components/GameElementsManager.gd" type="Script" id=13]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/angeloftheforest.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/cultoftheeye.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/theguardian.png" type="Texture" id=16]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/morpho.png" type="Texture" id=17]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/demonkittytrials.png" type="Texture" id=18]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/guardianfantasma.png" type="Texture" id=19]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/lovedeluxe.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/previews/2025zDiploPresencial/thegreatwork.png" type="Texture" id=21]
 [ext_resource path="res://assets/textures/levels/Super Mountain Dusk Files/Layers/trees.png" type="Texture" id=22]
 
 [sub_resource type="AtlasTexture" id=8]
@@ -274,8 +282,9 @@ custom_constants/separation = 960
 game_route = "https://astrades-studio.itch.io/demon-kitty-trials?secret=gkaKJRKNLjv4tdcSQBsuNIfMA"
 is_local = false
 game_title = "Demon Kitty: Trials!"
-game_team = "Demon Kitty: Trials!  "
+game_team = "Astrades Studio"
 game_members = "Ignacio Parentella"
+game_previews = [ ExtResource( 18 ) ]
 
 [node name="GameElement2" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 960.0
@@ -285,6 +294,7 @@ is_local = false
 game_title = "The Guardian"
 game_team = "The Guardian"
 game_members = "Cristian Milarch"
+game_previews = [ ExtResource( 16 ) ]
 
 [node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 1920.0
@@ -294,6 +304,7 @@ is_local = false
 game_title = "Cult of the Eye"
 game_team = "Cult of the Eye"
 game_members = "Juan Pablo Devinzenci"
+game_previews = [ ExtResource( 15 ) ]
 
 [node name="GameElement4" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 2880.0
@@ -303,6 +314,7 @@ is_local = false
 game_title = "Morpho"
 game_team = "Morpho"
 game_members = "Facundo Avgustin, Tomas Barrios"
+game_previews = [ ExtResource( 17 ) ]
 
 [node name="GameElement5" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 3840.0
@@ -312,6 +324,7 @@ is_local = false
 game_title = "Guardián Fantasma"
 game_team = "Guardián Fantasma"
 game_members = "Leandro Copani"
+game_previews = [ ExtResource( 19 ) ]
 
 [node name="GameElement6" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 4800.0
@@ -321,6 +334,27 @@ is_local = false
 game_title = "Angel of the Forest"
 game_team = "Angel of the Forest"
 game_members = "Cassandra Garcia - Demian Bava - Lucia Quiroga - Matias Fucarile"
+game_previews = [ ExtResource( 14 ) ]
+
+[node name="GameElement7" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 5760.0
+margin_right = 5760.0
+game_route = "https://astrades-studio.itch.io/love-deluxe"
+is_local = false
+game_title = "Love Deluxe"
+game_team = "Astrades Studio"
+game_members = "Juego externo de colaborador: Ignacio Parentella"
+game_previews = [ ExtResource( 20 ) ]
+
+[node name="GameElement8" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 6720.0
+margin_right = 6720.0
+game_route = "https://astrades-studio.itch.io/the-great-work"
+is_local = false
+game_title = "The Great Work"
+game_team = "Astrades Studio"
+game_members = "Juego externo de colaborador: Ignacio Parentella"
+game_previews = [ ExtResource( 21 ) ]
 
 [node name="ButtonsLayer" type="CanvasLayer" parent="GameElementsManager"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://src/screens/components/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/levels/Miami-synth-files/Layers/back.png" type="Texture" id=2]
@@ -10,8 +10,13 @@
 [ext_resource path="res://assets/textures/levels/Miami-synth-files/Layers/highway.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/Regular-Medium-Outline.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/textures/previews/2025zDiploGesell/jueguitopedro.png" type="Texture" id=11]
 [ext_resource path="res://src/screens/components/GameElement.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/screens/components/GameElementsManager.gd" type="Script" id=13]
+[ext_resource path="res://assets/textures/previews/2025zDiploGesell/jueguitojorge.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/previews/2025zDiploGesell/scrollerinfinito.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/previews/2025zDiploGesell/thething.png" type="Texture" id=16]
+[ext_resource path="res://assets/textures/previews/2025zDiploGesell/jumpingbunny.png" type="Texture" id=17]
 [ext_resource path="res://assets/textures/levels/Miami-synth-files/Layers/palm-tree.png" type="Texture" id=19]
 [ext_resource path="res://assets/textures/levels/Miami-synth-files/sprites/car-running3.png" type="Texture" id=24]
 [ext_resource path="res://assets/textures/levels/Miami-synth-files/sprites/car-running4.png" type="Texture" id=25]
@@ -332,6 +337,7 @@ is_local = false
 game_title = "Jumping Bunny"
 game_team = "Jumping Bunny"
 game_members = "Maria Azul Lima"
+game_previews = [ ExtResource( 17 ) ]
 
 [node name="GameElement2" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 960.0
@@ -341,42 +347,46 @@ is_local = false
 game_title = "The Thing"
 game_team = "The Thing"
 game_members = "Luna Pujo"
-
-[node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
-margin_left = 1920.0
-margin_right = 1920.0
-game_route = "https://spectreknight.itch.io/platformer-test"
-is_local = false
-game_title = "Platformer Test"
-game_team = "Platformer Test"
-game_members = "Alexander Manuel Kenneth - James Saunders"
+game_previews = [ ExtResource( 16 ) ]
 
 [node name="GameElement4" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
-margin_left = 2880.0
-margin_right = 2880.0
+margin_left = 1920.0
+margin_right = 1920.0
 game_route = "https://akagi1927.itch.io/juegitopedro?secret=qY1b5hvgolLNVfTR6dX3gJWSvo"
 is_local = false
 game_title = "Jueguito Pedro"
 game_team = "Jueguito Pedro"
 game_members = "Pedro Fernando Fernandez Barrios"
+game_previews = [ ExtResource( 11 ) ]
 
 [node name="GameElement5" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
-margin_left = 3840.0
-margin_right = 3840.0
+margin_left = 2880.0
+margin_right = 2880.0
 game_route = "https://soster1.itch.io/entrega-soster?secret=rlsKamiQASks0pv4YEoeOgsEgAg"
 is_local = false
 game_title = "Jueguito Jorge"
 game_team = "Jueguito Jorge"
 game_members = "Jorge Agustin Soster"
+game_previews = [ ExtResource( 14 ) ]
 
 [node name="GameElement6" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
-margin_left = 4800.0
-margin_right = 4800.0
+margin_left = 3840.0
+margin_right = 3840.0
 game_route = "https://ahorageselino.itch.io/scroller-infinito"
 is_local = false
 game_title = "Scroller Infinito"
 game_team = "Scroller Infinito"
 game_members = "Daniel Roberto Gallo"
+game_previews = [ ExtResource( 15 ) ]
+
+[node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
+margin_left = 4800.0
+margin_right = 4800.0
+game_route = "https://spectreknight.itch.io/platformer-test"
+is_local = false
+game_title = "Platformer Test"
+game_team = "Platformer Test"
+game_members = "Alexander Manuel Kenneth - James Saunders"
 
 [node name="ButtonsLayer" type="CanvasLayer" parent="GameElementsManager"]
 
