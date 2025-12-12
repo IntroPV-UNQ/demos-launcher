@@ -805,14 +805,17 @@ game_previews = [ ExtResource( 11 ) ]
 [node name="GameElement2" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 960.0
 margin_right = 960.0
+game_route = "https://lucas-sanguinetti.itch.io/weapons-and-wanteds"
+is_local = false
 game_title = "Weapons and Wanteds"
-game_team = "L&L Incorporated"
-game_members = "Lucas Sanguinetti - Lautaro Galvez Monge"
+game_team = "L&L Associated and Incorporated"
+game_members = "Lucas Sanguinetti - Lautaro Gálvez Monge"
 game_previews = [ ExtResource( 14 ) ]
 
 [node name="GameElement3" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 1920.0
 margin_right = 1920.0
+game_route = "https://maty11c.itch.io/field-invaders"
 is_local = false
 game_title = "Field Invaders"
 game_team = "Field Invaders"
@@ -822,6 +825,7 @@ game_previews = [ ExtResource( 17 ) ]
 [node name="GameElement4" parent="GameElementsManager/ElementsContainer" instance=ExtResource( 12 )]
 margin_left = 2880.0
 margin_right = 2880.0
+game_route = "https://mate000.itch.io/proyecto-leviatan"
 is_local = false
 game_title = "Proyecto Leviatan"
 game_team = "Proyecto Leviatan"
