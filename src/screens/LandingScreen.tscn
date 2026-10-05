@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/screens/LandingScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/ui/UI assets pack 2/UI books & more.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://src/screens/components/levels/Level2024s2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/screens/components/levels/Level2025s2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/screens/components/levels/Level2025zDiploVirtual.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/fonts/coolvetica condensed rg.otf" type="DynamicFontData" id=20]
+[ext_resource path="res://src/screens/components/levels/Level2026s1.tscn" type="PackedScene" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -46,10 +48,19 @@ margin_bottom = 8.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -7
+extra_spacing_bottom = -3
+extra_spacing_char = 1
+font_data = ExtResource( 20 )
+
 [node name="Landing" type="Node"]
 script = ExtResource( 1 )
-starting_level = 10
-levels = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 15 ) ]
+starting_level = 14
+levels = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 21 ) ]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -131,22 +142,24 @@ custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer"]
+[node name="YearsScroll" type="ScrollContainer" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 176.0
 margin_bottom = 490.0
+follow_focus = true
 scroll_horizontal_enabled = false
-scroll_vertical = 244
+scroll_vertical = 167
 
-[node name="YearsContainer" type="VBoxContainer" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="YearsContainer" type="VBoxContainer" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll"]
 unique_name_in_owner = true
-margin_top = -244.0
-margin_right = 150.0
+margin_top = -167.0
+margin_right = 110.0
 margin_bottom = 480.0
 
-[node name="2019" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
-margin_right = 150.0
+[node name="2019" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
+margin_right = 110.0
 margin_bottom = 36.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -161,9 +174,9 @@ pressed = true
 enabled_focus_mode = 0
 text = "2019"
 
-[node name="2020" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2020" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 40.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 76.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -177,9 +190,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2020"
 
-[node name="2021s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2021s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 80.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 116.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -193,9 +206,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2021s1"
 
-[node name="2021s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2021s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 120.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 156.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -209,9 +222,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2021s2"
 
-[node name="2022" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2022" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 160.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 196.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -225,9 +238,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2022"
 
-[node name="2023s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2023s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 200.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 236.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -241,9 +254,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2023s1"
 
-[node name="2023s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2023s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 240.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 276.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -257,9 +270,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2023s2"
 
-[node name="2024s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2024s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 280.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 316.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -273,9 +286,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2024s1"
 
-[node name="2024s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2024s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 320.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 356.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -289,9 +302,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2024s2"
 
-[node name="2025s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2025s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 360.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 396.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -305,9 +318,9 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2025s1"
 
-[node name="2025s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2025s2" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 400.0
-margin_right = 150.0
+margin_right = 110.0
 margin_bottom = 436.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -321,10 +334,10 @@ custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "2025s2"
 
-[node name="2025DiploVirtual" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
+[node name="2025DiploVirtual" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
 margin_top = 440.0
-margin_right = 150.0
-margin_bottom = 532.0
+margin_right = 110.0
+margin_bottom = 493.0
 focus_mode = 0
 size_flags_horizontal = 3
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -333,16 +346,16 @@ custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
 enabled_focus_mode = 0
 text = "Diplomatura
 Virtual
 2025"
 
-[node name="2025DiploPresencial" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
-margin_top = 536.0
-margin_right = 150.0
-margin_bottom = 628.0
+[node name="2025DiploPresencial" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
+margin_top = 497.0
+margin_right = 110.0
+margin_bottom = 550.0
 focus_mode = 0
 size_flags_horizontal = 3
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -351,16 +364,34 @@ custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
 enabled_focus_mode = 0
 text = "Diplomatura
 Presencial
 2025"
 
-[node name="2025DiploGesell" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/ScrollContainer/YearsContainer"]
-margin_top = 632.0
-margin_right = 150.0
-margin_bottom = 724.0
+[node name="2025DiploGesell" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
+margin_top = 554.0
+margin_right = 110.0
+margin_bottom = 607.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Diplomatura
+Gesell
+2025"
+
+[node name="2026s1" type="CheckBox" parent="UILayer/Control/Projects/VBoxContainer/MarginContainer/YearsScroll/YearsContainer"]
+margin_top = 611.0
+margin_right = 110.0
+margin_bottom = 647.0
 focus_mode = 0
 size_flags_horizontal = 3
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -371,9 +402,7 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.992157, 1, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 enabled_focus_mode = 0
-text = "Diplomatura
-Gesell
-2025"
+text = "2026s1"
 
 [node name="LevelContainer" type="Node" parent="."]
 

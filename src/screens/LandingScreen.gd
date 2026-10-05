@@ -1,6 +1,7 @@
 extends Screen
 
 onready var level_container: Node = $LevelContainer
+onready var years_scroll: ScrollContainer = $"%YearsScroll"
 onready var years_buttons: Array = $"%YearsContainer".get_children()
 
 export (int) var starting_level: int
@@ -15,6 +16,8 @@ func _ready() -> void:
 		button.connect("pressed", self, "_on_year_button_pressed", [i])
 	
 	_on_year_button_pressed(starting_level)
+	yield(get_tree(), "idle_frame")
+	years_scroll.scroll_vertical = 2000
 
 
 func _on_year_button_pressed(index: int) -> void:
